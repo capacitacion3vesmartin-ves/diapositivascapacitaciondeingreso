@@ -76,7 +76,7 @@ h1{margin:6px 0 4px;font-size:28px;text-align:center}.sub{text-align:center;colo
 @keyframes dz{0%{left:-60%}40%,100%{left:130%}}
 @media(prefers-reduced-motion:reduce){.sh::after,.bn::after{animation:none;display:none}}
 </style></head><body>
-<div class="bn"><div class="vl"><a class="vb" href="https://capacitacion3vesmartin-ves.github.io/campuscapacitacion/">← Volver al campus</a><span id="bi"></span></div><div class="bti"><span><svg class="ik" viewBox="0 0 24 24"><path d="M3 3h18M4 3v11a2 2 0 002 2h12a2 2 0 002-2V3M12 16v5M8 21h8M8 11l3-3 2 2 3-3"/></svg></span> VER DIAPOSITIVAS</div></div>
+<div class="bn"><div class="vl"><a class="vb" id="vc" href="https://capacitacion3vesmartin-ves.github.io/campuscapacitacion/">← Volver al campus</a><span id="bi"></span></div><div class="bti"><span><svg class="ik" viewBox="0 0 24 24"><path d="M3 3h18M4 3v11a2 2 0 002 2h12a2 2 0 002-2V3M12 16v5M8 21h8M8 11l3-3 2 2 3-3"/></svg></span> VER DIAPOSITIVAS</div></div>
 <div id="app"></div>
 <button id="mbtn" class="mbtn" data-a="master"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Master</button>
 <div id="md" class="md"></div>
@@ -150,7 +150,7 @@ function R(){const a=$('#app'),mb=$('#mbtn'),sl=($('.nb')||{}).scrollLeft||0;mb.
   else if(ST=='err')h+='<div class="st">No se pudieron cargar las diapositivas.<br><br><button class="bt" data-a="reintentar">Reintentar</button></div>';
   else{const s=MODS.filter(m=>FIL=='Todos'||m[0]==FIL).map(secc).join('');h+=s||'<div class="nr">No se encontraron diapositivas para «'+E(Q)+'».</div>'}
   h+=navb()}
- $('#bi').innerHTML=SEDE?'<button class="vb" data-a="cambiar">← Pantalla de inicio</button>':'';a.innerHTML=h;mb.style.bottom='96px';ajb();emo(a);const nb=$('.nb');if(nb){nb.scrollLeft=sl;nb.onscroll=nbUpd;nbUpd()}}
+ $('#vc').style.display=SEDE?'none':'';$('#bi').innerHTML=SEDE?'<button class="vb" data-a="cambiar">← Pantalla de inicio</button>':'';a.innerHTML=h;mb.style.bottom='96px';ajb();emo(a);const nb=$('.nb');if(nb){nb.scrollLeft=sl;nb.onscroll=nbUpd;nbUpd()}}
 function nbUpd(){const n=$('.nb');if(!n)return;const w=n.parentNode;w.classList.toggle('mr',n.scrollLeft+n.clientWidth<n.scrollWidth-4);w.classList.toggle('ml',n.scrollLeft>4)}
 addEventListener('resize',nbUpd);
 function ajb(){const b=$('.bn');if(b)document.body.style.paddingTop=b.offsetHeight+'px'}
